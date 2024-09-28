@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgepxif35j5tm"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_n2r6p"]
+[ext_resource type="Texture2D" uid="uid://dwe6rbwr0er8u" path="res://assets/spritesheet.png" id="2_a0glp"]
+[ext_resource type="AudioStream" uid="uid://gidbksbjmxek" path="res://assets/sounds/footsteps.mp3" id="3_ebsig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k161"]
+atlas = ExtResource("2_a0glp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vda42"]
+atlas = ExtResource("2_a0glp")
+region = Rect2(32, 0, 32, 32)
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("1_n2r6p")
+left = "p1_left"
+right = "p1_right"
+up = "p1_up"
+down = "p1_down"
+
+[node name="body" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_8k161")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ebsig")
+
+[node name="eyes" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_vda42")
+centered = false
