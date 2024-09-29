@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 1000
-var target_position = position
+@export var target_position:Vector2 
 
 @export var grid_size:int = 32
 
@@ -13,7 +13,14 @@ var target_position = position
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var eyes: Sprite2D = $eyes
+@onready var tile_map_layer: TileMapLayer = $"../TileMapLayer"
 
+
+func is_wall(direction, pos):
+	pos = snap_to_grid(pos)
+	pos /= grid_size
+	var out = tile_map_layer.get_cell_atlas_coords(Vector2i(pos) + direction)
+	return (out == Vector2i(9, 0) or out == Vector2i(10, 0))
 
 func snap_to_grid(pos) -> Vector2:
 	var snapped_x = round(pos.x / grid_size) * grid_size
@@ -41,13 +48,13 @@ func _physics_process(delta):
 	else:
 		position = target_position
 		var movement_vector = Vector2.ZERO
-		if Input.is_action_just_pressed(left):
+		if Input.is_action_just_pressed(left) and not is_wall(Vector2i(-1, 0), position):
 			movement_vector.x -= 1
-		if Input.is_action_just_pressed(right):
+		if Input.is_action_just_pressed(right) and not is_wall(Vector2i(1, 0), position):
 			movement_vector.x += 1
-		if Input.is_action_just_pressed(up):
+		if Input.is_action_just_pressed(up) and not is_wall(Vector2i(0, -1), position):
 			movement_vector.y -= 1
-		if Input.is_action_just_pressed(down):
+		if Input.is_action_just_pressed(down) and not is_wall(Vector2i(0, 1), position):
 			movement_vector.y += 1
 
 		movement_vector = movement_vector.normalized()

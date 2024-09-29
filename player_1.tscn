@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgepxif35j5tm"]
+[gd_scene load_steps=11 format=3 uid="uid://cgepxif35j5tm"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n2r6p"]
-[ext_resource type="Texture2D" uid="uid://dwe6rbwr0er8u" path="res://assets/spritesheet.png" id="2_a0glp"]
+[ext_resource type="Texture2D" uid="uid://rpgti4pxfffs" path="res://assets/spritesheet.png" id="2_a0glp"]
 [ext_resource type="AudioStream" uid="uid://gidbksbjmxek" path="res://assets/sounds/footsteps.mp3" id="3_ebsig"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8k161"]
@@ -11,6 +11,21 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vda42"]
 atlas = ExtResource("2_a0glp")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htrws"]
+size = Vector2(28, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl1gt"]
+size = Vector2(28, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k0tv"]
+size = Vector2(28, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk5sm"]
+size = Vector2(6, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_642c4"]
+size = Vector2(6, 28)
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_n2r6p")
@@ -30,3 +45,31 @@ stream = ExtResource("3_ebsig")
 [node name="eyes" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_vda42")
 centered = false
+
+[node name="Colliders" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_htrws")
+
+[node name="Top" type="Area2D" parent="."]
+
+[node name="top" type="CollisionShape2D" parent="Top"]
+position = Vector2(16, -1)
+shape = SubResource("RectangleShape2D_wl1gt")
+
+[node name="Bottom" type="Area2D" parent="."]
+
+[node name="bottom" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(16, 33)
+shape = SubResource("RectangleShape2D_3k0tv")
+
+[node name="Left" type="Area2D" parent="."]
+
+[node name="lside" type="CollisionShape2D" parent="Left"]
+position = Vector2(-1, 16)
+shape = SubResource("RectangleShape2D_wk5sm")
+
+[node name="Right" type="Area2D" parent="."]
+
+[node name="rside" type="CollisionShape2D" parent="Right"]
+position = Vector2(33, 16)
+shape = SubResource("RectangleShape2D_642c4")
