@@ -4,8 +4,10 @@ extends AnimatedSprite2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_white:
-		Globals.white_coins += 1
+		if body.is_player_a:
+			Globals.white_coins += 1
+			queue_free()
 	else:
-		Globals.black_coins += 1
-		
-	queue_free()
+		if !body.is_player_a:
+			Globals.black_coins += 1
+			queue_free()
