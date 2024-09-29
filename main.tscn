@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://5hef71duugrt"]
 
-[ext_resource type="Texture2D" uid="uid://dwe6rbwr0er8u" path="res://assets/spritesheet.png" id="1_g2u3s"]
+[ext_resource type="Texture2D" uid="uid://rpgti4pxfffs" path="res://assets/spritesheet.png" id="1_g2u3s"]
 [ext_resource type="Script" path="res://Scripts/title.gd" id="1_jp7y5"]
 [ext_resource type="FontFile" uid="uid://dvmvvadfwk0ya" path="res://assets/fonts/CozetteVector.ttf" id="3_5sxx2"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_s6s8h"]
@@ -53,3 +53,4 @@ texture = SubResource("AtlasTexture_knqto")
 
 [node name="Fade" parent="." instance=ExtResource("4_s6s8h")]
 texture_filter = 1
+position = Vector2(-45, 22)

@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("LMB") or Input.is_action_just_released("RMB"):
 		node_2d.play("fade_in")
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://level-1.tscn")
+		get_tree().change_scene_to_file("res://tutorial_level.tscn")
