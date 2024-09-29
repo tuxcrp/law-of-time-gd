@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://d1g6v55juke5c"]
+[gd_scene load_steps=13 format=4 uid="uid://d1g6v55juke5c"]
 
 [ext_resource type="Texture2D" uid="uid://1genmavw1uq5" path="res://assets/spritesheet.png" id="1_7laxm"]
 [ext_resource type="Script" path="res://Scripts/level-control.gd" id="1_xwk6f"]
 [ext_resource type="PackedScene" uid="uid://cgepxif35j5tm" path="res://player_1.tscn" id="2_xpixk"]
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="3_7wvnb"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_ns3we"]
-[ext_resource type="Script" path="res://Scripts/player2.gd" id="5_np45u"]
 [ext_resource type="PackedScene" path="res://white_coin.tscn" id="6_getin"]
 [ext_resource type="PackedScene" path="res://black_coin.tscn" id="8_lgli0"]
 
@@ -148,7 +147,6 @@ other = NodePath("../Player2")
 [node name="Player2" parent="." node_paths=PackedStringArray("other") instance=ExtResource("3_7wvnb")]
 z_index = 10
 position = Vector2(-384, 160)
-script = ExtResource("5_np45u")
 target_position = Vector2(-384, 160)
 other = NodePath("../Player1")
 
