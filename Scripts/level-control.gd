@@ -6,6 +6,8 @@ extends Node2D
 @onready var player_1: CharacterBody2D = $Player1
 @onready var player_2: CharacterBody2D = $Player2
 @onready var timer: Timer = $Timer
+@export var splashy:String = ""
+
 
 var time_paused_a = true
 var time_paused_b = true
@@ -15,12 +17,14 @@ var target_pos_b = Vector2(0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var splash = splashy.replace("|", "\n")
 	fade.get_parent().get_node("ColorRect").color.a = 255
-	$Fade/Label.text = "Through the void of night, two parts of a whole travel together...\n\
-	 Each given control of time so long as the other is alive..."
-	await get_tree().create_timer(3).timeout
+	$Fade/Label.text = splash
+	await get_tree().create_timer(5).timeout
+	$Fade/Label.text = ""
 	fade.play("fade_out")
 	animation_player.play("camera_zoom")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

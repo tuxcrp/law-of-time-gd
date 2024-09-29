@@ -112,6 +112,7 @@ sources/1 = SubResource("TileSetAtlasSource_665co")
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_xtgik")
+splashy = "Press both <E> and <O> simutaneously to swap positions temporarily"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -157,7 +158,8 @@ zoom = Vector2(0.88, 0.805)
 editor_draw_limits = true
 
 [node name="Fade" parent="." instance=ExtResource("5_6l52r")]
-metadata/_edit_lock_ = true
+z_index = 100
+position = Vector2(-608, -32)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -184,3 +186,5 @@ speed_scale = 5.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

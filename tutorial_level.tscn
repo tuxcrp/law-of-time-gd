@@ -112,6 +112,7 @@ sources/1 = SubResource("TileSetAtlasSource_d6s2w")
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_xwk6f")
+splashy = "Through the void of night, two parts of a whole travel together...|Each given control of time so long as the other is alive..."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
