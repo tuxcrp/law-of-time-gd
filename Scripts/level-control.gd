@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	if len(coins.get_children()) == 0:
 		fade.play("fade_in")
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://level_two.tscn")
+		get_tree().change_scene_to_file("res://tut_2.tscn")
 		
 				
 	if Input.is_action_just_pressed("p1_switch") \

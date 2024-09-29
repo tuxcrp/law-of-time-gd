@@ -140,14 +140,14 @@ tile_set = SubResource("TileSet_5cu6u")
 
 [node name="Player1" parent="." node_paths=PackedStringArray("other") instance=ExtResource("2_xpixk")]
 z_index = 10
-position = Vector2(-384, -128)
-target_position = Vector2(-384, -128)
+position = Vector2(-416, -160)
+target_position = Vector2(-416, -160)
 other = NodePath("../Player2")
 
 [node name="Player2" parent="." node_paths=PackedStringArray("other") instance=ExtResource("3_7wvnb")]
 z_index = 10
-position = Vector2(-384, 160)
-target_position = Vector2(-384, 160)
+position = Vector2(384, 128)
+target_position = Vector2(384, 128)
 other = NodePath("../Player1")
 is_player_a = false
 
@@ -162,13 +162,13 @@ metadata/_edit_lock_ = true
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin-White" parent="Coins" instance=ExtResource("6_getin")]
-position = Vector2(-288, -131)
+position = Vector2(384, -160)
 autoplay = ""
 frame_progress = 0.0
 speed_scale = 5.0
 
 [node name="Coin-Black" parent="Coins" instance=ExtResource("8_lgli0")]
-position = Vector2(-288, 160)
+position = Vector2(-416, 128)
 speed_scale = 5.0
 
 [node name="Timer" type="Timer" parent="."]
