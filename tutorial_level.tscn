@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="3_7wvnb"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_ns3we"]
 [ext_resource type="Script" path="res://Scripts/player2.gd" id="5_np45u"]
-[ext_resource type="PackedScene" path="res://white_coin.tscn" id="6_getin"]
-[ext_resource type="PackedScene" path="res://black_coin.tscn" id="8_lgli0"]
+[ext_resource type="PackedScene" uid="uid://eypumpj43luq" path="res://white_coin.tscn" id="6_getin"]
+[ext_resource type="PackedScene" uid="uid://dhd3b7r220nra" path="res://black_coin.tscn" id="8_lgli0"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -150,7 +150,6 @@ z_index = 10
 position = Vector2(-384, 160)
 script = ExtResource("5_np45u")
 target_position = Vector2(-384, 160)
-grid_size = 32
 other = NodePath("../Player1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -173,3 +172,9 @@ centered = false
 position = Vector2(-288, 160)
 speed_scale = 5.0
 centered = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

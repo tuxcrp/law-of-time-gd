@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var speed = 1000
 @export var target_position:Vector2 
-var last_position = target_position
 
 @export var grid_size:int = 32
 
@@ -36,8 +35,6 @@ func _process(delta: float) -> void:
 	
 			
 func _physics_process(delta):
-	if Input.is_action_pressed("p1_switch") and Input.is_action_pressed("p2_switch"):
-		target_position = other.target_position
 	if (target_position - position).length() > 10:
 		Globals.time_paused_a = false
 		var direction = (target_position - position).normalized()
@@ -60,4 +57,4 @@ func _physics_process(delta):
 		if movement_vector != Vector2.ZERO:
 			target_position = snap_to_grid(position + movement_vector * grid_size)
 			audio_stream_player_2d.play()
-	last_position = target_position
+		

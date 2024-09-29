@@ -3,6 +3,9 @@ extends Node2D
 @onready var fade = $Fade/AnimationPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var coins: Node = $Coins
+@onready var player_1: CharacterBody2D = $Player1
+@onready var player_2: CharacterBody2D = $Player2
+@onready var timer: Timer = $Timer
 
 var time_paused_a = true
 var time_paused_b = true
@@ -25,3 +28,17 @@ func _process(delta: float) -> void:
 		else:
 			if !coin.is_playing():
 				coin.play()
+				
+	if Input.is_action_just_pressed("p1_switch") \
+		and Input.is_action_pressed("p2_switch") \
+		or Input.is_action_just_pressed("p2_switch") \
+		and Input.is_action_pressed("p1_switch"):
+			if timer.is_stopped():
+				player_2.target_position = player_1.position
+				player_1.target_position = player_2.position
+				
+				timer.start(5)
+				
+func _on_timer_timeout() -> void:
+	player_2.target_position = player_1.position
+	player_1.target_position = player_2.position
