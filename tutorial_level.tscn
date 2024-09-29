@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="3_7wvnb"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_ns3we"]
 [ext_resource type="Script" path="res://Scripts/player2.gd" id="5_np45u"]
-[ext_resource type="PackedScene" uid="uid://eypumpj43luq" path="res://white_coin.tscn" id="6_getin"]
-[ext_resource type="PackedScene" uid="uid://dhd3b7r220nra" path="res://black_coin.tscn" id="8_lgli0"]
+[ext_resource type="PackedScene" path="res://white_coin.tscn" id="6_getin"]
+[ext_resource type="PackedScene" path="res://black_coin.tscn" id="8_lgli0"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -37,7 +37,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.466667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.88, 0.805), Vector2(1.13, 1.034)]
+"values": [Vector2(0.88, 0.88), Vector2(1.13, 1.13)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ydgay"]

@@ -7,6 +7,9 @@ extends Node2D
 var time_paused_a = true
 var time_paused_b = true
 
+var target_pos_a = Vector2(0, 0)
+var target_pos_b = Vector2(0, 0)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animation_player.play("camera_zoom")
@@ -22,6 +25,3 @@ func _process(delta: float) -> void:
 		else:
 			if !coin.is_playing():
 				coin.play()
-				
-				
-	print(time_paused_a, " | ", time_paused_b)

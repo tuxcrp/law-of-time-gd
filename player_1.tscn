@@ -44,6 +44,7 @@ stream = ExtResource("3_ebsig")
 volume_db = 24.0
 
 [node name="eyes" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = SubResource("AtlasTexture_vda42")
 centered = false
 
