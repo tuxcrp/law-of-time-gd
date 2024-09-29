@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=4 uid="uid://b0ug2iardruu2"]
+[gd_scene load_steps=13 format=4 uid="uid://d1k0e7wgqnmb"]
 
 [ext_resource type="Script" path="res://Scripts/level-control.gd" id="1_xtgik"]
 [ext_resource type="Texture2D" uid="uid://1genmavw1uq5" path="res://assets/spritesheet.png" id="2_xkrl3"]
 [ext_resource type="PackedScene" uid="uid://cgepxif35j5tm" path="res://player_1.tscn" id="3_4j7qo"]
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="4_blwds"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="5_6l52r"]
-[ext_resource type="PackedScene" uid="uid://eypumpj43luq" path="res://white_coin.tscn" id="6_qyqko"]
-[ext_resource type="PackedScene" uid="uid://dhd3b7r220nra" path="res://black_coin.tscn" id="7_0jflj"]
+[ext_resource type="PackedScene" uid="uid://cwhtcrn1twbwk" path="res://white_coin.tscn" id="6_qyqko"]
+[ext_resource type="PackedScene" uid="uid://dikbtf1h7ido3" path="res://black_coin.tscn" id="7_0jflj"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -126,12 +126,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -768.0
-offset_top = -416.0
-offset_right = 768.0
-offset_bottom = 416.0
+offset_left = -2496.0
+offset_top = -1536.0
+offset_right = -960.0
+offset_bottom = -704.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(5.12175, 5.12175)
 color = Color(0, 0, 0, 1)
 
 [node name="Base" type="TileMapLayer" parent="."]

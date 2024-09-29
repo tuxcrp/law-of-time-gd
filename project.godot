@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 BgMusic="*res://Scripts/bg_music.gd"
 Globals="*res://Scripts/globals.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
+
 [input]
 
 p1_up={

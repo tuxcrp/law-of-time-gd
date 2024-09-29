@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dhd3b7r220nra"]
+[gd_scene load_steps=26 format=3 uid="uid://dikbtf1h7ido3"]
 
 [ext_resource type="Texture2D" uid="uid://1genmavw1uq5" path="res://assets/spritesheet.png" id="1_o4rre"]
 [ext_resource type="Script" path="res://Scripts/coin_controller.gd" id="2_um07t"]

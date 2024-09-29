@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cgepxif35j5tm" path="res://player_1.tscn" id="2_xpixk"]
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="3_7wvnb"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_ns3we"]
-[ext_resource type="PackedScene" uid="uid://eypumpj43luq" path="res://white_coin.tscn" id="6_getin"]
-[ext_resource type="PackedScene" uid="uid://dhd3b7r220nra" path="res://black_coin.tscn" id="8_lgli0"]
+[ext_resource type="PackedScene" uid="uid://cwhtcrn1twbwk" path="res://white_coin.tscn" id="6_getin"]
+[ext_resource type="PackedScene" uid="uid://dikbtf1h7ido3" path="res://black_coin.tscn" id="8_lgli0"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -126,12 +126,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -768.0
-offset_top = -416.0
-offset_right = 768.0
-offset_bottom = 416.0
+offset_left = -2176.0
+offset_top = -1152.0
+offset_right = -640.0
+offset_bottom = -320.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2.77607, 2.77607)
 color = Color(0, 0, 0, 1)
 
 [node name="Base" type="TileMapLayer" parent="."]
