@@ -1,3 +1,4 @@
-extends Node 
-var time_paused_a = true
-var time_paused_b = true
+extends Node
+
+var black_coins = 0
+var white_coins = 0

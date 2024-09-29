@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://eypumpj43luq"]
+[gd_scene load_steps=26 format=3 uid="uid://eypumpj43luq"]
 
 [ext_resource type="Texture2D" uid="uid://1genmavw1uq5" path="res://assets/spritesheet.png" id="1_ltneh"]
+[ext_resource type="Script" path="res://Scripts/coin_controller.gd" id="2_bbodi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1g048"]
 atlas = ExtResource("1_ltneh")
@@ -162,8 +163,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h20xt"]
+radius = 14.0
+
 [node name="Coin-White" type="AnimatedSprite2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rftuh")
 autoplay = "default"
 frame_progress = 0.891764
+centered = false
+script = ExtResource("2_bbodi")
+is_white = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("CircleShape2D_h20xt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

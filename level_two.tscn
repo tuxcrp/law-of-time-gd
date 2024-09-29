@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cgepxif35j5tm" path="res://player_1.tscn" id="2_2yexl"]
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="3_41s77"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_dkfex"]
-[ext_resource type="PackedScene" path="res://white_coin.tscn" id="5_f4mjm"]
-[ext_resource type="PackedScene" path="res://black_coin.tscn" id="6_71t3s"]
+[ext_resource type="PackedScene" uid="uid://eypumpj43luq" path="res://white_coin.tscn" id="5_f4mjm"]
+[ext_resource type="PackedScene" uid="uid://dhd3b7r220nra" path="res://black_coin.tscn" id="6_71t3s"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -156,7 +156,6 @@ zoom = Vector2(0.88, 0.805)
 editor_draw_limits = true
 
 [node name="Fade" parent="." instance=ExtResource("4_dkfex")]
-script = null
 metadata/_edit_lock_ = true
 
 [node name="Coins" type="Node" parent="."]
