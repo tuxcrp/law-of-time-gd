@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://d1g6v55juke5c"]
+[gd_scene load_steps=14 format=4 uid="uid://d1g6v55juke5c"]
 
 [ext_resource type="Texture2D" uid="uid://1genmavw1uq5" path="res://assets/spritesheet.png" id="1_7laxm"]
 [ext_resource type="Script" path="res://Scripts/level-control.gd" id="1_xwk6f"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="3_7wvnb"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_ns3we"]
 [ext_resource type="Script" path="res://Scripts/player2.gd" id="5_np45u"]
-[ext_resource type="PackedScene" uid="uid://eypumpj43luq" path="res://coin.tscn" id="6_getin"]
+[ext_resource type="PackedScene" uid="uid://eypumpj43luq" path="res://white_coin.tscn" id="6_getin"]
+[ext_resource type="PackedScene" uid="uid://dhd3b7r220nra" path="res://black_coin.tscn" id="8_lgli0"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -139,11 +140,13 @@ tile_map_data = PackedByteArray("AADy/wcAAQAKAAAAAADy/wMAAQAKAAAAAADy/wQAAQAKAAA
 tile_set = SubResource("TileSet_5cu6u")
 
 [node name="Player1" parent="." node_paths=PackedStringArray("other") instance=ExtResource("2_xpixk")]
+z_index = 10
 position = Vector2(-384, -128)
 target_position = Vector2(-384, -128)
 other = NodePath("../Player2")
 
 [node name="Player2" parent="." node_paths=PackedStringArray("other") instance=ExtResource("3_7wvnb")]
+z_index = 10
 position = Vector2(-384, 160)
 script = ExtResource("5_np45u")
 target_position = Vector2(-384, 160)
@@ -159,9 +162,14 @@ metadata/_edit_lock_ = true
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="AnimatedSprite2D" parent="Coins" instance=ExtResource("6_getin")]
-position = Vector2(256, -160)
+[node name="Coin-White" parent="Coins" instance=ExtResource("6_getin")]
+position = Vector2(-288, -131)
 autoplay = ""
 frame_progress = 0.0
+speed_scale = 5.0
+centered = false
+
+[node name="Coin-Black" parent="Coins" instance=ExtResource("8_lgli0")]
+position = Vector2(-288, 160)
 speed_scale = 5.0
 centered = false
