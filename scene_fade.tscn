@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dudrxfyyay7ob"]
+[gd_scene load_steps=6 format=3 uid="uid://dudrxfyyay7ob"]
+
+[ext_resource type="Script" path="res://level-control.gd" id="1_eghka"]
 
 [sub_resource type="Animation" id="Animation_71pld"]
 length = 0.001
@@ -56,6 +58,7 @@ _data = {
 
 [node name="Fade" type="Node2D"]
 scale = Vector2(20, 20)
+script = ExtResource("1_eghka")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -66.0
