@@ -35,11 +35,11 @@ func _process(delta: float) -> void:
 			
 func _physics_process(delta):
 	if (target_position - position).length() > 10:
-		Globals.time_paused_a = false
+		Globals.time_paused_b = false
 		var direction = (target_position - position).normalized()
 		position += direction * speed * delta
 	else:
-		Globals.time_paused_a = true
+		Globals.time_paused_b = true
 		position = target_position
 		var movement_vector = Vector2.ZERO
 		if Input.is_action_just_pressed(left) and not is_wall(Vector2i(-1, 0), position):
