@@ -157,7 +157,7 @@ editor_draw_limits = true
 
 [node name="Fade" parent="." instance=ExtResource("4_ns3we")]
 z_index = 100
-metadata/_edit_lock_ = true
+position = Vector2(-608, -32)
 
 [node name="Coins" type="Node" parent="."]
 

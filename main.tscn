@@ -53,5 +53,4 @@ texture = SubResource("AtlasTexture_knqto")
 
 [node name="Fade" parent="." instance=ExtResource("4_s6s8h")]
 texture_filter = 1
-position = Vector2(-45, 22)
-metadata/_edit_lock_ = true
+position = Vector2(-572, -38)
