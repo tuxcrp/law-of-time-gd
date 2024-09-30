@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dsyps5lmmipaj"]
+[gd_scene load_steps=17 format=4 uid="uid://dsyps5lmmipaj"]
 
 [ext_resource type="Texture2D" uid="uid://brjxq1yf67jt2" path="res://assets/spritesheet.png" id="1_7laxm"]
 [ext_resource type="Script" path="res://Scripts/level_control_maze.gd" id="1_kmncd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://kkdkxrbgrh2j" path="res://assets/maze_1.svg" id="6_qpq00"]
 [ext_resource type="PackedScene" uid="uid://chaomk0x4bixu" path="res://enemy_white.tscn" id="7_uq681"]
 [ext_resource type="PackedScene" uid="uid://d1oehhvjhm5wl" path="res://enemy_black.tscn" id="8_tal16"]
+[ext_resource type="FontFile" uid="uid://dvmvvadfwk0ya" path="res://assets/fonts/CozetteVector.ttf" id="9_i51iq"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -22,6 +23,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.88, 0.805)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_3ce2h"]
@@ -40,10 +53,27 @@ tracks/0/keys = {
 "values": [Vector2(0.88, 0.88), Vector2(0.7, 0.7)]
 }
 
+[sub_resource type="Animation" id="Animation_dhk7r"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ydgay"]
 _data = {
 "RESET": SubResource("Animation_rmypb"),
-"camera_zoom": SubResource("Animation_3ce2h")
+"camera_zoom": SubResource("Animation_3ce2h"),
+"fade": SubResource("Animation_dhk7r")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eo3mv"]
@@ -111,6 +141,10 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_eo3mv")
 
+[sub_resource type="LabelSettings" id="LabelSettings_e0dtt"]
+font = ExtResource("9_i51iq")
+font_size = 120
+
 [node name="Root" type="Node2D"]
 script = ExtResource("1_kmncd")
 splashy = "They're bound to to always look for each other. | Dodge the Puzzles whilst trying to collect your coins."
@@ -135,6 +169,22 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.78345, 1.62644)
 color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 100
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2048.0
+offset_top = -1088.0
+offset_right = 432.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.78345, 1.62644)
+color = Color(0, 0, 0, 0)
 
 [node name="Base" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -184,5 +234,17 @@ randomness = 0.35
 [node name="Enemy_Black" parent="." instance=ExtResource("8_tal16")]
 position = Vector2(177, 31)
 randomness = 0.35
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 101
+texture_filter = 1
+offset_left = -720.0
+offset_top = 24.0
+offset_right = 720.0
+offset_bottom = 145.0
+text = "Let's try again, shall we?"
+label_settings = SubResource("LabelSettings_e0dtt")
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
