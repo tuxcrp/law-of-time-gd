@@ -12,4 +12,29 @@ script = ExtResource("1_k4la6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_o1vpw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(12, 50)
+scale = Vector2(4, 4)
+texture = ExtResource("2_fgvuq")
+region_enabled = true
+region_rect = Rect2(288, 96, 32, 32)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(52, 92)
+scale = Vector2(4, 4)
+texture = ExtResource("2_fgvuq")
+region_enabled = true
+region_rect = Rect2(224, 96, 32, 32)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(50, 12)
+scale = Vector2(4, 4)
+texture = ExtResource("2_fgvuq")
+region_enabled = true
+region_rect = Rect2(192, 96, 32, 32)

@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://j432usdktchy"]
+[gd_scene load_steps=4 format=3 uid="uid://j432usdktchy"]
 
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_020mb"]
 [ext_resource type="Texture2D" uid="uid://brjxq1yf67jt2" path="res://assets/spritesheet.png" id="1_rjnbc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6mk8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ftnp"]
 atlas = ExtResource("1_rjnbc")
 region = Rect2(352, 96, 32, 32)
 
 [node name="Bullet_white" type="Node2D"]
+script = ExtResource("1_020mb")
+is_white = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-3, -3)
-texture = SubResource("AtlasTexture_a6mk8")
+position = Vector2(-6, -6)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_0ftnp")
 centered = false

@@ -60,7 +60,6 @@ func _on_timer_timeout() -> void:
 
 func _ready() -> void:
 	var splash = splashy.replace("|", "\n")
-	print(splashy)
 	fade.get_parent().get_node("ColorRect").color.a = 255
 	$Fade/Label.text = splash
 	await get_tree().create_timer(5).timeout

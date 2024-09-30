@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1oehhvjhm5wl"]
+
+[ext_resource type="Texture2D" uid="uid://brjxq1yf67jt2" path="res://assets/spritesheet.png" id="1_6fc68"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_xcwwx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_comxh"]
+atlas = ExtResource("1_6fc68")
+region = Rect2(320, 96, 32, 32)
+
+[node name="Enemy_Black" type="Node2D"]
+script = ExtResource("1_xcwwx")
+is_white = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_comxh")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(12, 50)
+scale = Vector2(4, 4)
+texture = ExtResource("1_6fc68")
+region_enabled = true
+region_rect = Rect2(448, 96, 32, 32)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(52, 92)
+scale = Vector2(4, 4)
+texture = ExtResource("1_6fc68")
+region_enabled = true
+region_rect = Rect2(384, 96, 32, 32)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(50, 12)
+scale = Vector2(4, 4)
+texture = ExtResource("1_6fc68")
+region_enabled = true
+region_rect = Rect2(352, 96, 32, 32)
