@@ -100,10 +100,10 @@ font_color = Color(1, 1, 1, 0)
 [node name="Fade" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -838.0
-offset_top = -584.0
-offset_right = -798.0
-offset_bottom = -544.0
+offset_left = -4184.0
+offset_top = -3181.0
+offset_right = -3978.0
+offset_bottom = -2975.0
 scale = Vector2(42.0424, 29.3134)
 color = Color(0, 0, 0, 0)
 

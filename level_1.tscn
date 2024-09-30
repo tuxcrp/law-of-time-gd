@@ -179,8 +179,10 @@ texture = ExtResource("6_qpq00")
 
 [node name="Enemy_White" parent="." instance=ExtResource("7_uq681")]
 position = Vector2(-238, 33)
+randomness = 0.35
 
 [node name="Enemy_Black" parent="." instance=ExtResource("8_tal16")]
 position = Vector2(177, 31)
+randomness = 0.35
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
