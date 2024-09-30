@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dsyps5lmmipaj"]
+[gd_scene load_steps=12 format=4 uid="uid://dsyps5lmmipaj"]
 
 [ext_resource type="Texture2D" uid="uid://1genmavw1uq5" path="res://assets/spritesheet.png" id="1_7laxm"]
 [ext_resource type="Script" path="res://Scripts/level_control_maze.gd" id="1_kmncd"]
@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ry8qs3cvsjbw" path="res://player_2.tscn" id="3_7wvnb"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_ns3we"]
 [ext_resource type="Texture2D" uid="uid://kkdkxrbgrh2j" path="res://assets/maze_1.svg" id="6_qpq00"]
-[ext_resource type="PackedScene" uid="uid://cwhtcrn1twbwk" path="res://white_coin.tscn" id="7_f3dax"]
-[ext_resource type="PackedScene" uid="uid://dikbtf1h7ido3" path="res://black_coin.tscn" id="8_savqc"]
 
 [sub_resource type="Animation" id="Animation_rmypb"]
 length = 0.001
@@ -167,18 +165,6 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Coins" type="Node" parent="."]
-
-[node name="Coin-White" parent="Coins" instance=ExtResource("7_f3dax")]
-visible = false
-position = Vector2(384, -160)
-autoplay = ""
-frame_progress = 0.0
-speed_scale = 5.0
-
-[node name="Coin-Black" parent="Coins" instance=ExtResource("8_savqc")]
-visible = false
-position = Vector2(-416, 128)
-speed_scale = 5.0
 
 [node name="Maze1" type="Sprite2D" parent="."]
 visible = false

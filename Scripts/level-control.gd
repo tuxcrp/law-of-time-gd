@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var time_paused = time_paused_a and time_paused_b
 	for coin in coins.get_children():
 		if time_paused:

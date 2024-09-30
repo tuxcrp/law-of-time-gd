@@ -29,7 +29,7 @@ func snap_to_grid(pos) -> Vector2:
 	var snapped_y = round(pos.y / grid_size) * grid_size
 	return Vector2(snapped_x, snapped_y)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var target = other.position - position
 	eyes.position = target.normalized() * 5
 
