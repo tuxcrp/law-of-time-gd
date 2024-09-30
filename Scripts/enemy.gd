@@ -17,18 +17,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if not is_time_paused():
-		print(Globals.is_swapping)
-		if Globals.is_swapping:
-			print("Swapping")
-		else:
+		if !Globals.is_swapping:
 			update_rotation()
 			shoot_projectile()
+
 			
 func update_rotation() -> void:
 	look_at(player.position)
 
 func shoot_projectile() -> void:
-	if randf() < (randomness / 5 if !is_white else randomness / 10):
+	if randf() < (randomness / 5 if !is_white else randomness / 9.5):
 		var new_bullet = bullet.instantiate()
 		new_bullet.position = global_position
 		new_bullet.rotation = rotation

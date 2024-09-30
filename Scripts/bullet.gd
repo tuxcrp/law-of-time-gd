@@ -13,13 +13,13 @@ func _process(delta: float) -> void:
 		$"../Label".show()
 		$"../ColorRect2".show()
 		fade.play("fade")
-		await get_tree().create_timer(2).timeout
+		get_tree().create_timer(1).timeout
 		get_tree().reload_current_scene()
 
 func is_colliding_with_player() -> bool:
 	if is_white:
 		var player_a = get_parent().get_node("Player1")
-		if player_a and position.distance_to(player_a.position) < 6: 
+		if player_a and position.distance_to(player_a.position) < 8: 
 			return true
 	else:
 		var player_b = get_parent().get_node("Player2")
