@@ -9,10 +9,11 @@ var shoot_chance: float = 0.25
 @onready var Globals = get_parent()
 
 func _ready() -> void:
-	bullet = preload("res://bullet_white.tscn")
 	if is_white:
+		bullet = preload("res://bullet_white.tscn")
 		player = get_node("../Player1") 
 	else:
+		bullet = preload("res://bullet_black.tscn")
 		player = get_node("../Player2")  
 
 func _process(delta: float) -> void:
