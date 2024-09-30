@@ -111,7 +111,7 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_6t2hm"]
 font = ExtResource("1_tcmkr")
-font_size = 40
+font_size = 49
 font_color = Color(1, 1, 1, 0)
 
 [node name="Fade" type="Node2D"]
@@ -123,6 +123,7 @@ offset_right = -3978.0
 offset_bottom = -2975.0
 scale = Vector2(42.0424, 29.3134)
 color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -131,11 +132,12 @@ libraries = {
 
 [node name="Label" type="Label" parent="."]
 z_index = 21
-offset_left = -608.0
-offset_top = -10.0
-offset_right = 610.0
-offset_bottom = 75.0
+offset_left = -738.0
+offset_top = -53.0
+offset_right = 754.0
+offset_bottom = 50.0
 text = "Through the void of night, two parts of a whole travel together...
 Each given control of time so long as the other is alive..."
 label_settings = SubResource("LabelSettings_6t2hm")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

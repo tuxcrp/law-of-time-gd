@@ -47,11 +47,15 @@ func _process(_delta: float) -> void:
 		or Input.is_action_just_pressed("p2_switch") \
 		and Input.is_action_pressed("p1_switch"):
 			if timer.is_stopped():
+				Globals.is_swapping = true
 				player_2.target_position = player_1.position
 				player_1.target_position = player_2.position
-				
+		
 				timer.start(5)
+				await get_tree().create_timer(5).timeout
+				#Globals.is_swapping = false
 				
 func _on_timer_timeout() -> void:
+	Globals.is_swapping = true
 	player_2.target_position = player_1.position
 	player_1.target_position = player_2.position

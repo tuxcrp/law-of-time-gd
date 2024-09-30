@@ -9,7 +9,7 @@ region = Rect2(160, 96, 32, 32)
 
 [node name="Enemy_White" type="Node2D"]
 script = ExtResource("1_k4la6")
-randomness = 0.3
+randomness = 0.05
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

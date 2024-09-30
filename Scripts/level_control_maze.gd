@@ -7,6 +7,7 @@ extends Node2D
 @onready var player_1: CharacterBody2D = $Player1
 @onready var player_2: CharacterBody2D = $Player2
 @onready var timer: Timer = $Timer
+@export var next_scene:String
 
 @onready var tile_map_layer: TileMapLayer = $"Base"
 var black_coin_scene: PackedScene
@@ -38,7 +39,7 @@ func _process(_delta: float) -> void:
 		if len(coins) == 0:
 			fade.play("fade_in")
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file("res://tut_2.tscn")
+			get_tree().change_scene_to_file(next_scene)
 			
 					
 		if Input.is_action_just_pressed("p1_switch") \
@@ -46,16 +47,21 @@ func _process(_delta: float) -> void:
 			or Input.is_action_just_pressed("p2_switch") \
 			and Input.is_action_pressed("p1_switch"):
 				if timer.is_stopped():
-					player_2.target_position = player_1.position
-					player_1.target_position = player_2.position
-					
-					timer.start(5)
+					start_swap()
 	elif game_started:
 		spawn_coins()
+		
+func start_swap():
+	Globals.is_swapping = true
+	player_2.target_position = player_1.position
+	player_1.target_position = player_2.position
+	timer.start(5)
 				
 func _on_timer_timeout() -> void:
 	player_2.target_position = player_1.position
 	player_1.target_position = player_2.position
+	await get_tree().create_timer(3.0).timeout
+	Globals.is_swapping = false
 
 
 func _ready() -> void:
@@ -95,7 +101,7 @@ func spawn_coins():
 	
 	for side_tiles in [left_tiles, right_tiles]:
 		for coin_type in [black_coin_scene, white_coin_scene]:
-			for i in range(5):  # 5 of each coin type per side
+			for i in range(1):  # 5 of each coin type per side
 				var valid_position = false
 				var attempts = 0
 				while not valid_position and attempts < 100:

@@ -9,7 +9,7 @@ region = Rect2(320, 96, 32, 32)
 
 [node name="Enemy_Black" type="Node2D"]
 script = ExtResource("1_xcwwx")
-randomness = 0.3
+randomness = 0.05
 is_white = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]

@@ -147,7 +147,8 @@ font_size = 120
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_kmncd")
-splashy = "They're bound to to always look for each other. | Dodge the Puzzles whilst trying to collect your coins."
+splashy = "They're bound to always look for each other and follow their eyes. | Dodge the Puzzles whilst trying to collect your coins."
+next_scene = "res://credits.tscn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
