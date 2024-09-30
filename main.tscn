@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://5hef71duugrt"]
 
-[ext_resource type="Texture2D" uid="uid://1genmavw1uq5" path="res://assets/spritesheet.png" id="1_g2u3s"]
+[ext_resource type="Texture2D" uid="uid://brjxq1yf67jt2" path="res://assets/spritesheet.png" id="1_g2u3s"]
 [ext_resource type="Script" path="res://Scripts/title.gd" id="1_jp7y5"]
 [ext_resource type="FontFile" uid="uid://dvmvvadfwk0ya" path="res://assets/fonts/CozetteVector.ttf" id="3_5sxx2"]
 [ext_resource type="PackedScene" uid="uid://dudrxfyyay7ob" path="res://scene_fade.tscn" id="4_s6s8h"]
@@ -21,10 +21,10 @@ scale = Vector2(3.035, 3.035)
 zoom = Vector2(0.785, 0.785)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 149.0
-offset_top = 306.0
-offset_right = 627.0
-offset_bottom = 368.0
+offset_left = -222.0
+offset_top = 355.0
+offset_right = 256.0
+offset_bottom = 417.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Click to start..."
@@ -53,4 +53,3 @@ texture = SubResource("AtlasTexture_knqto")
 
 [node name="Fade" parent="." instance=ExtResource("4_s6s8h")]
 texture_filter = 1
-position = Vector2(-572, -38)

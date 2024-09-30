@@ -7,7 +7,7 @@ extends Node2D
 @onready var player_2: CharacterBody2D = $Player2
 @onready var timer: Timer = $Timer
 @export var splashy:String = ""
-
+@export var next_scene:String
 
 var time_paused_a = true
 var time_paused_b = true
@@ -24,8 +24,6 @@ func _ready() -> void:
 	$Fade/Label.text = ""
 	fade.play("fade_out")
 	animation_player.play("camera_zoom")
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -41,7 +39,7 @@ func _process(_delta: float) -> void:
 	if len(coins.get_children()) == 0:
 		fade.play("fade_in")
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://tut_2.tscn")
+		get_tree().change_scene_to_file(next_scene)
 		
 				
 	if Input.is_action_just_pressed("p1_switch") \

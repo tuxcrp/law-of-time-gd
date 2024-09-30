@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://j432usdktchy"]
+
+[ext_resource type="Texture2D" uid="uid://brjxq1yf67jt2" path="res://assets/spritesheet.png" id="1_rjnbc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6mk8"]
+atlas = ExtResource("1_rjnbc")
+region = Rect2(352, 96, 32, 32)
+
+[node name="Bullet_white" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-3, -3)
+texture = SubResource("AtlasTexture_a6mk8")
+centered = false

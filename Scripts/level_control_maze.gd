@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var splashy:String = ""
+
 @onready var fade = $Fade/AnimationPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_1: CharacterBody2D = $Player1
@@ -12,6 +14,7 @@ var white_coin_scene: PackedScene
 var tilemap_rect: Rect2
 var coins_spawned: bool = false
 
+var game_started = false
 
 var time_paused_a = true
 var time_paused_b = true
@@ -47,7 +50,7 @@ func _process(_delta: float) -> void:
 					player_1.target_position = player_2.position
 					
 					timer.start(5)
-	else:
+	elif game_started:
 		spawn_coins()
 				
 func _on_timer_timeout() -> void:
@@ -56,10 +59,20 @@ func _on_timer_timeout() -> void:
 
 
 func _ready() -> void:
+	var splash = splashy.replace("|", "\n")
+	print(splashy)
+	fade.get_parent().get_node("ColorRect").color.a = 255
+	$Fade/Label.text = splash
+	await get_tree().create_timer(5).timeout
+	#$Fade/Label.text = ""
+	fade.play("fade_out")
+	animation_player.play("camera_zoom")
+	
 	black_coin_scene = preload("res://black_coin.tscn")
 	white_coin_scene = preload("res://white_coin.tscn")
 	
 	tilemap_rect = tile_map_layer.get_used_rect()
+	game_started = true
 	
 func get_empty_tiles() -> Array:
 	var empty_tiles = []
