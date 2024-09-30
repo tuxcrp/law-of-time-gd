@@ -62,6 +62,7 @@ func _ready() -> void:
 	var splash = splashy.replace("|", "\n")
 	fade.get_parent().get_node("ColorRect").color.a = 255
 	$Fade/Label.text = splash
+	fade.play("text_reset")
 	await get_tree().create_timer(5).timeout
 	#$Fade/Label.text = ""
 	fade.play("fade_out")

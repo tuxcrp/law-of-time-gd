@@ -18,7 +18,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not is_time_paused():
 		update_rotation()
-		shoot_projectile()
+		if randf() < randomness:
+			shoot_projectile()
 			
 
 func update_rotation() -> void:
