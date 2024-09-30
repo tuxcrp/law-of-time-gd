@@ -4,7 +4,6 @@ extends Node2D
 @export var is_white: bool = true
 var bullet: PackedScene
 var player: CharacterBody2D
-var shoot_chance: float = 0.25
 
 @onready var Globals = get_parent()
 
@@ -19,8 +18,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not is_time_paused():
 		update_rotation()
-		if randf() < shoot_chance:
-			shoot_projectile()
+		shoot_projectile()
+			
 
 func update_rotation() -> void:
 	look_at(player.position)
